@@ -24,14 +24,12 @@ import {
   styleUrl: './slider-rx.component.scss',
 })
 export class SliderRxComponent {
-  // This could be any observable
-
   @Input() links: string[] = [];
   public started$ = new BehaviorSubject(false);
   public paused$ = new BehaviorSubject(false);
   public delay$ = this.paused$.pipe(
     switchMap((isPaused) =>
-      timer(isPaused ? 20000 : this.started$.getValue() ? 1000 : 0),
+      timer(isPaused ? 20000 : this.started$.getValue() ? 2000 : 0),
     ),
     tap((_) => this.started$.next(true)),
   );

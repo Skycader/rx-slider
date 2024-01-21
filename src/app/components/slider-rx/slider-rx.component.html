@@ -3,6 +3,7 @@
   class="slider"
   (mousedown)="paused$.next(true)"
   (mouseup)="paused$.next(false)"
+  [class.paused]="paused$ | async"
 >
   {{ url$ | async }}
 </div>
