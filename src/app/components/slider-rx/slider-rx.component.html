@@ -1,0 +1,8 @@
+<div>{{ paused$ | async | render }}</div>
+<div
+  class="slider"
+  (mousedown)="paused$.next(true)"
+  (mouseup)="paused$.next(false)"
+>
+  {{ url$ | async }}
+</div>
