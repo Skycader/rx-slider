@@ -1,10 +1,13 @@
 {
-  "name": "rxjs-practice",
+  "name": "rx-slider",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-for-github": "ng build --base-href https://skycader.github.io/rx-slider/",
+    "post-build-on-github": "npx angular-cli-ghpages --dir=dist/rx-slider/browser",
+    "pub": "yarn build-for-github && yarn post-build-on-github",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:rxjs-practice": "node dist/rxjs-practice/server/server.mjs"
